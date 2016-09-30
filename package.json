@@ -1,0 +1,24 @@
+{
+  "main": "main.js",
+  "build": {
+    "appId": "your.id",
+    "category": "your.app.category.type",
+    "win": {
+      "iconUrl": "(windows-only) https link to icon"
+    }
+  },
+  "scripts": {
+    "start": "electron .",
+    "pack": "build --dir",
+    "dist": "build",
+    "postinstall": "install-app-deps"
+  },
+  "devDependencies": {
+    "electron-builder": "^7.3.0",
+    "electron-config": "^0.2.1",
+    "electron": "^1.4.1"
+  },
+  "dependencies": {
+    "@types/electron": "^1.3.22"
+  }
+}

@@ -1,0 +1,65 @@
+:root {
+  --char-size: 32px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "helvetica neue", helvetica, arial, sans;
+}
+
+results {
+  padding: 10px;
+  display: block;
+  border-radius: 5px;
+}
+
+input[name="query"] {
+  width: 100%;
+  font-size: 24px;
+  border-radius: 2px;
+  padding: 10px;
+  color: #666;
+  outline: none;
+  border: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.result {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 0;
+  border-radius: 3px;
+}
+
+.result-char {
+  display: inline-block;
+  width: 52px;
+  font-size: var(--char-size);
+  line-height: var(--char-size);
+  text-align: center;
+}
+
+.result-details {
+  display: inline-block;
+  width: calc(100% - 58px);
+  line-height: var(--char-size);
+  vertical-align: bottom;
+  font-size: 16px;
+}
+
+.result-short-name {
+  font-weight: bold;
+}
+
+.result-keywords {
+  opacity: 0.5;
+}
