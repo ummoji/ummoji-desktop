@@ -1,7 +1,7 @@
 {
   "name": "ummoji",
   "version": "1.0.0",
-  "description": "A desktop app for finding the right emoji",
+  "description": "An Electron app for finding the right emoji",
   "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)",
   "license": "MIT",
   "dependencies": {
