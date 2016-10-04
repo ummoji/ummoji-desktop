@@ -10,12 +10,6 @@ body {
   font-family: "helvetica neue", helvetica, arial, sans;
 }
 
-results {
-  padding: 10px;
-  display: block;
-  border-radius: 5px;
-}
-
 input[name="query"] {
   width: 100%;
   font-size: 24px;
@@ -26,7 +20,8 @@ input[name="query"] {
   border: none;
 }
 
-ul {
+.results {
+  display: block;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -35,9 +30,21 @@ ul {
 .result {
   display: block;
   width: 100%;
-  margin: 10px 0;
-  padding: 0;
-  border-radius: 3px;
+  margin: 0;
+  padding: 7px 0;
+  background: transparent;
+  position: relative;
+  background: white;
+}
+
+.result:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.result.selected {
+  background: #2874FA;
+  color: white;
 }
 
 .result-char {
@@ -46,6 +53,9 @@ ul {
   font-size: var(--char-size);
   line-height: var(--char-size);
   text-align: center;
+  position: absolute;
+  top: 9px;
+  left: 0px;
 }
 
 .result-details {
@@ -54,6 +64,8 @@ ul {
   line-height: var(--char-size);
   vertical-align: bottom;
   font-size: 16px;
+  /*background: green;*/
+  margin-left: 52px;
 }
 
 .result-short-name {
