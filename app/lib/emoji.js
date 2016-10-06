@@ -27,6 +27,8 @@ emoji.entries = emojiData
   .sort((a, b) => b.rank - a.rank)
 
 emoji.matching = (query) => {
+  if (!query || !query.length) return []
+
   // make query pattern case insensitive
   query = new RegExp(query, 'i')
 
