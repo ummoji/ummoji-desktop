@@ -20,12 +20,14 @@ document.addEventListener('keydown', event => {
       break
     case 'Shift':
     case 'Meta':
-      // no op
+      // no-op
       break
     case '/':
+      // inspired by vim, firefox, etc
       clearAndFocusInput()
       break
     default:
+      // all other characters should be appended to query input
       focusInput()
   }
 })
@@ -56,7 +58,7 @@ function prev (event) {
   // bail if already on first result
   if (highlightIndex < 0) return
   highlightIndex--
-  highlight()
+  highlightCurrentResult()
 }
 
 function next () {
@@ -64,21 +66,21 @@ function next () {
   // bail if already on last result
   if (highlightIndex === results.length - 1) return
   highlightIndex++
-  highlight()
+  highlightCurrentResult()
 }
 
-function highlight () {
+function highlightCurrentResult () {
   results.forEach((result, i) => {
     result.classList.toggle('selected', i === highlightIndex)
   })
 }
 
 function selectCurrentResult (event) {
-  let data = results[highlightIndex].dataset
+  let {shortName, char} = results[highlightIndex].dataset
   if (['Alt', 'Control', 'Meta', 'Shift'].some(key => event.getModifierState(key))) {
-    clipboard.writeText(`:${data.shortName}:`)
+    clipboard.writeText(`:${shortName}:`)
   } else {
-    clipboard.writeText(data.char)
+    clipboard.writeText(char)
   }
   hideApp()
 }
