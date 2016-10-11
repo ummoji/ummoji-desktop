@@ -1,9 +1,12 @@
 {
   "name": "ummoji",
+  "productName": "Ummoji",
   "version": "1.0.0",
+  "main": "main.js",
   "description": "An Electron app for finding the right emoji",
-  "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)",
+  "homepage": "https://github.com/zeke/ummoji",
   "license": "MIT",
+  "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)",
   "dependencies": {
     "emoji-data": "^0.2.0",
     "emoji-rankings": "^1.0.0",

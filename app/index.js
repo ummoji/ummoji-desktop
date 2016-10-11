@@ -8,13 +8,15 @@ window.config = new Config()
 // Create elements
 var $results = render()
 var $input = yo`
-  <input
-    oninput=${search}
-    type="text"
-    name="query"
-    placeholder="Find emoji..."
-    autofocus
-    tabindex=1>`
+  <header>
+    <input
+      oninput=${search}
+      type="text"
+      name="query"
+      placeholder="Find emoji..."
+      autofocus
+      tabindex=1>
+  </header>`
 
 // Add elements to DOM
 document.body.appendChild($input)

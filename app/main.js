@@ -9,5 +9,5 @@ app.on('ready', () => {
   }
 
   win = new BrowserWindow(opts)
-  win.loadURL(`file://${__dirname}/app/index.html`)
+  win.loadURL(`file://${__dirname}/index.html`)
 })
