@@ -8,6 +8,7 @@
   "license": "MIT",
   "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)",
   "dependencies": {
+    "electron-config": "^0.2.1",
     "emoji-data": "^0.2.0",
     "emoji-rankings": "^1.0.0",
     "emojilib": "^2.0.2",
