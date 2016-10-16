@@ -1,7 +1,7 @@
 const emoji = require('./lib/emoji')
 const Choice = require('./lib/choice')
 const app = require('choo')()
-const mainView = require('./views/home')
+const view = require('./view')
 const MAX_RESULTS = 50
 
 app.model({
@@ -20,10 +20,10 @@ app.model({
           return state
           break
         case 'ArrowDown':
-          // stop at last result
+          // disallow arrowing beyond the last result
           if (state.selectedIndex === state.results.length - 1) return state
 
-          // increment index
+          // increment selected index
           return Object.assign(state, {selectedIndex: ++state.selectedIndex})
           break
         case 'ArrowUp':
@@ -38,6 +38,7 @@ app.model({
 
           break
         case 'Enter':
+          // If no results, do nothing
           if (!state.results.length) return state
 
           // Copy the state object, in case we need to make changes
@@ -84,7 +85,7 @@ app.model({
   }
 })
 
-app.router((route) => [route('/', mainView)])
+app.router((route) => [route('/', view)])
 
 const tree = app.start()
 document.body.appendChild(tree)
