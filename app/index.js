@@ -1,9 +1,7 @@
 NodeList.prototype.forEach = Array.prototype.forEach
-const {clipboard} = require('electron')
 const yo = require('yo-yo')
 const emoji = require('./lib/emoji')
-const Config = require('electron-config')
-window.config = new Config()
+const Choice = require('./lib/choice')
 
 // Create elements
 var $results = render()
@@ -57,6 +55,8 @@ function render (results) {
 // React to keyboard input (after DOM is ready)
 const input = document.querySelector('input[name="query"]')
 let results = document.querySelectorAll('.results > li')
+
+// No results are selected by default.
 let selectedIndex = -1
 
 document.addEventListener('keydown', event => {
@@ -65,13 +65,13 @@ document.addEventListener('keydown', event => {
       hideApp()
       break
     case 'ArrowDown':
-      next()
+      selectNextResult()
       break
     case 'ArrowUp':
-      prev(event)
+      selectPreviousResult(event)
       break
     case 'Enter':
-      bingo(event)
+      chooseCurrentSelection(event)
       break
     case 'Shift':
     case 'Meta':
@@ -83,7 +83,7 @@ document.addEventListener('keydown', event => {
       break
     default:
       // all other characters should be appended to query input
-      focusInputAndDeselectResults()
+      prepareForInput()
   }
 })
 
@@ -95,67 +95,50 @@ function clearAndFocusInput (event) {
   event.preventDefault()
   input.value = ''
   input.oninput()
-  focusInputAndDeselectResults()
+  prepareForInput()
 }
 
-function focusInputAndDeselectResults () {
+function prepareForInput () {
   selectedIndex = -1
   results.forEach((result, i) => result.classList.remove('selected'))
   input.focus()
 }
 
-function prev (event) {
+function selectPreviousResult (event) {
   // prevent ArrowUp key from moving cursor to start of input
   event.preventDefault()
 
   // bail if already on first result
   if (selectedIndex < 0) return
   selectedIndex--
-  selectCurrentResult()
+  updateSelection()
 }
 
-function next () {
+function selectNextResult () {
   // update result set (so we can get a count)
   results = document.querySelectorAll('.results > li')
 
   // bail if already on last result
   if (selectedIndex === results.length - 1) return
   selectedIndex++
-  selectCurrentResult()
+  updateSelection()
 }
 
-function selectCurrentResult () {
+function updateSelection () {
   results.forEach((result, i) => {
     result.classList.toggle('selected', i === selectedIndex)
   })
 }
 
-function bingo (event) {
-  // try to select first result
+function chooseCurrentSelection (event) {
+  // If results exist but none are selected, "I'm feeling lucky"
   if (selectedIndex < 0 && results.length) selectedIndex = 0
 
   // bail if no result
   if (selectedIndex < 0) return
 
-  // pluck properties from data attributes
-  let {char, shortName, unified} = results[selectedIndex].dataset
-
-  // copy 🍐 to clipboard, or :pear: if a modifier key is pressed
-  if (['Alt', 'Control', 'Meta', 'Shift'].some(key => event.getModifierState(key))) {
-    clipboard.writeText(`:${shortName}:`)
-  } else {
-    clipboard.writeText(char)
-  }
-
-  // save query history
-  let queries = config.get('queries') || []
-  queries.push({
-    query: input.value,
-    unified: unified,
-    shortName: shortName,
-    date: new Date()
-  })
-  config.set('queries', queries)
+  // Write to clipboard and save to disk
+  let choice = new Choice(results[selectedIndex].dataset, event)
 
   hideApp()
 }
