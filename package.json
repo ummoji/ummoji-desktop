@@ -9,6 +9,7 @@
     "start": "electron app",
     "pack": "build --dir",
     "dist": "build",
+    "compile-emoji-data": "node app/bin/compile-emoji-data > app/lib/emoji-data.json",
     "postinstall": "install-app-deps",
     "build:icon": "nicns --in build/icon.png --out build/icon.icns"
   },
