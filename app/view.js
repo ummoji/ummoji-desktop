@@ -11,7 +11,6 @@ module.exports = function (state, prev, send) {
           autofocus
           tabindex=1
           value="${state.query}"
-          onkeyup=${(event) => send('handleKeyup', event)}
           oninput=${(e) => send('updateQuery', e.target.value)}
         >
       </header>
