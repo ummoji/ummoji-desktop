@@ -11,7 +11,8 @@
     "dist": "build",
     "compile-emoji-data": "node app/bin/compile-emoji-data > app/lib/emoji-data.json",
     "postinstall": "install-app-deps",
-    "build:icon": "nicns --in build/icon.png --out build/icon.icns"
+    "build:icon": "nicns --in build/icon.png --out build/icon.icns",
+    "build": "npm run dist && cp -r dist/mac/Ummoji.app /Applications && open /Applications/Ummoji.app"
   },
   "devDependencies": {
     "electron": "^1.4.1",
