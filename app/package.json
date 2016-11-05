@@ -10,8 +10,6 @@
   "dependencies": {
     "choo": "^3.3.0",
     "electron-config": "^0.2.1",
-    "emoji-data": "^0.2.0",
-    "emoji-rankings": "^1.0.0",
-    "emojilib": "^2.0.2"
+    "ummoji-client": "^1.0.0"
   }
 }

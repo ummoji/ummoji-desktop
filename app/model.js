@@ -1,4 +1,4 @@
-const emoji = require('./lib/emoji')
+const emoji = require('ummoji-client')
 const Choice = require('./lib/choice')
 const MAX_RESULTS = 50
 
