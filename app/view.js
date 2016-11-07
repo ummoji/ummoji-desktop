@@ -11,7 +11,7 @@ module.exports = function (state, prev, send) {
           autofocus
           tabindex=1
           value="${state.query}"
-          oninput=${(e) => send('updateQuery', e.target.value)}
+          oninput=${updateQuery}
         >
       </header>
 
@@ -29,4 +29,8 @@ module.exports = function (state, prev, send) {
       </ul>
     </content>
   `
+
+  function updateQuery (event) {
+    send('updateQuery', event.target.value)
+  }
 }
