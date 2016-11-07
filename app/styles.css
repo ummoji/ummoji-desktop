@@ -20,12 +20,12 @@ header {
 input[name="query"] {
   width: calc(100% - 20px);
   font-size: 24px;
-  border-radius: 3px;
   padding: 10px;
   color: #666;
   outline: none;
   border: none;
-  margin: 10px;
+  margin: 5px;
+  background: #F0F0F0;
 }
 
 .results {
