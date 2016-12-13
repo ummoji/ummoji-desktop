@@ -17,7 +17,7 @@
     "build:open": "open /Applications/Ummoji.app"
   },
   "devDependencies": {
-    "electron": "^1.4.1",
+    "electron": "^1.4.12",
     "electron-builder": "^7.11.4",
     "node-icns": "0.0.4",
     "npm-run-all": "^3.1.1",
