@@ -13,7 +13,7 @@ body {
 }
 
 header {
-  background: #F0F0F0;
+  background: #FFFFFF;
   border-radius: 3px;
 }
 
@@ -25,7 +25,7 @@ input[name="query"] {
   outline: none;
   border: none;
   margin: 5px;
-  background: #F0F0F0;
+  background: #FFFFFF;
 }
 
 .results {
@@ -74,6 +74,10 @@ input[name="query"] {
   font-size: 16px;
   /*background: green;*/
   margin-left: 52px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .result-short-name {
