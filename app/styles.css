@@ -13,18 +13,18 @@ body {
 }
 
 header {
-  background: #FFFFFF;
+  background: #fad228;
   border-radius: 3px;
 }
 
 input[name="query"] {
-  width: calc(100% - 20px);
+  width: calc(100% - 16px);
   font-size: 24px;
   padding: 10px;
   color: #666;
   outline: none;
   border: none;
-  margin: 5px;
+  margin: 8px;
   background: #FFFFFF;
 }
 
