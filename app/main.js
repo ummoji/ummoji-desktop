@@ -1,8 +1,6 @@
 require('electron-analytics').init('S1guTYsxsl')
-
 const {app} = require('electron')
 const updater = require('./lib/updater')
-let win
 
 function initialize () {
   app.on('ready', () => {
