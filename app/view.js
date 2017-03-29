@@ -7,7 +7,7 @@ module.exports = function (state, prev, send) {
         <input
           type="text"
           name="query"
-          placeholder="Find emoji..."
+          placeholder="Ummm..."
           autofocus
           tabindex=1
           value="${state.query}"
