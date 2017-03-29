@@ -9,6 +9,7 @@
   "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)",
   "dependencies": {
     "choo": "^3.3.0",
+    "electron-analytics": "^0.1.2",
     "electron-config": "^0.2.1",
     "ummoji-client": "^1.0.0"
   }

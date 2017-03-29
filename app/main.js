@@ -1,3 +1,5 @@
+require('electron-analytics').init('S1guTYsxsl')
+
 const {app, BrowserWindow} = require('electron')
 let win
 
