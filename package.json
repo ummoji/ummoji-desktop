@@ -16,11 +16,13 @@
     "build:osx": "build --osx",
     "build:win64": "build --win --x64",
     "build:install-locally": "cp -r dist/mac/Ummoji.app /Applications",
-    "build:open": "open /Applications/Ummoji.app"
+    "build:open": "open /Applications/Ummoji.app",
+    "release": "gh-release"
   },
   "devDependencies": {
     "electron": "^1.6.0",
     "electron-builder": "^7.11.4",
+    "gh-release": "^2.2.1",
     "node-icns": "0.0.4",
     "npm-run-all": "^3.1.1",
     "png-to-ico": "^1.0.1"
