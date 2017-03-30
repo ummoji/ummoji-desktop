@@ -1,31 +1,29 @@
 {
-  "version": "1.1.0",
-  "repository": "https://github.com/ummoji/ummoji-desktop",
-  "private": true,
+  "name": "ummoji",
   "productName": "Ummoji",
-  "main": "main.js",
-  "build": {
-    "appId": "com.sikelianos.zeke.ummoji",
-    "category": "public.app-category.reference"
-  },
+  "version": "1.1.0",
+  "description": "A desktop app for finding the perfect emoji",
+  "private": true,
+  "license": "MIT",
+  "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)",
+  "repository": "https://github.com/ummoji/ummoji-desktop",
+  "main": "app/main.js",
   "scripts": {
     "start": "electron app",
-    "postinstall": "install-app-deps",
-    "build": "npm-run-all build:*",
-    "build:icon-mac": "nicns --in build/icon.png --out build/icon.icns",
-    "build:icon-win": "png-to-ico build/icon.png > build/icon.ico",
-    "build:osx": "build --osx",
-    "build:win64": "build --win --x64",
-    "build:install-locally": "cp -r dist/mac/Ummoji.app /Applications",
-    "build:open": "open /Applications/Ummoji.app",
-    "release": "gh-release"
+    "build": "script/build.sh",
+    "release": "gh-release -a dist/Ummoji-$npm_package_version-mac.zip dist/Ummoji-$npm_package_version-win.zip"
+  },
+  "dependencies": {
+    "choo": "^3.3.0",
+    "electron-analytics": "^0.1.2",
+    "electron-config": "^0.2.1",
+    "ummoji-client": "^1.0.0"
   },
   "devDependencies": {
     "electron": "^1.6.0",
-    "electron-builder": "^7.11.4",
+    "electron-zip-packager": "^4.0.2",
     "gh-release": "^2.2.1",
     "node-icns": "0.0.4",
-    "npm-run-all": "^3.1.1",
     "png-to-ico": "^1.0.1"
   }
 }
