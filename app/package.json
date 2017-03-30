@@ -1,7 +1,6 @@
 {
   "name": "ummoji",
   "productName": "Ummoji",
-  "version": "1.0.0",
   "main": "main.js",
   "description": "A desktop app for finding the perfect emoji",
   "homepage": "https://github.com/zeke/ummoji",
