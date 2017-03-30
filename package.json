@@ -17,7 +17,8 @@
     "build:win64": "build --win --x64",
     "build:install-locally": "cp -r dist/mac/Ummoji.app /Applications",
     "build:open": "open /Applications/Ummoji.app",
-    "release": "gh-release"
+    "release": "gh-release",
+    "repository": "https://github.com/ummoji/ummoji-desktop"
   },
   "devDependencies": {
     "electron": "^1.6.0",
