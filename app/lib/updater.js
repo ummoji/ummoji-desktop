@@ -62,6 +62,36 @@ exports.updateMenu = function () {
   })
 }
 
+exports.refreshUpdaterSubmenu = function (items, position) {
+  if (process.mas) return
+
+  let updateItems = [{
+    label: `Version ${app.getVersion()}`,
+    enabled: false
+  }, {
+    label: 'Checking for Update',
+    enabled: false,
+    key: 'checkingForUpdate'
+  }, {
+    label: 'Check for Update',
+    visible: false,
+    key: 'checkForUpdate',
+    click: function () {
+      autoUpdater.checkForUpdates()
+    }
+  }, {
+    label: 'Restart and Install Update',
+    enabled: true,
+    visible: false,
+    key: 'restartToUpdate',
+    click: function () {
+      autoUpdater.quitAndInstall()
+    }
+  }]
+
+  items.splice.apply(items, [position, 0].concat(updateItems))
+}
+
 exports.createShortcut = function (callback) {
   spawnUpdate([
     '--createShortcut',
