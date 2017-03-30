@@ -11,9 +11,9 @@ There are no builds yet, so you have to install it manually:
 ```sh
 git clone https://github.com/ummoji/ummoji-desktop
 cd ummoji-desktop
-npm install
+yarn
 cd app
-npm install
+yarn
 cd ..
 npm start
 ```
