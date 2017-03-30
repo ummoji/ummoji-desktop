@@ -1,7 +1,7 @@
 {
   "name": "ummoji",
   "productName": "Ummoji",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A desktop app for finding the perfect emoji",
   "private": true,
   "license": "MIT",
@@ -11,7 +11,7 @@
   "scripts": {
     "start": "electron app",
     "build": "script/build.sh",
-    "release": "gh-release -a dist/Ummoji-$npm_package_version-mac.zip dist/Ummoji-$npm_package_version-win.zip"
+    "release": "script/release.sh"
   },
   "dependencies": {
     "choo": "^3.3.0",
@@ -20,8 +20,9 @@
     "ummoji-client": "^1.0.0"
   },
   "devDependencies": {
+    "create-dmg": "^1.2.0",
     "electron": "^1.6.0",
-    "electron-zip-packager": "^4.0.2",
+    "electron-packager": "^8.6.0",
     "gh-release": "^2.2.1",
     "node-icns": "0.0.4",
     "png-to-ico": "^1.0.1"
