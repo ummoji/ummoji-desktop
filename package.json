@@ -11,7 +11,7 @@
   "scripts": {
     "start": "electron app",
     "build": "script/build.sh",
-    "release": "script/release.sh"
+    "release": "gh-release --assets dist/ummoji.dmg,dist/ummoji-win.zip,dist/ummoji-linux.zip"
   },
   "dependencies": {
     "choo": "^3.3.0",
