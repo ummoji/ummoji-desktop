@@ -9,7 +9,7 @@
   "repository": "https://github.com/ummoji/ummoji-desktop",
   "main": "app/main.js",
   "scripts": {
-    "start": "electron app",
+    "start": "electron app/main.js",
     "build": "script/build.sh",
     "release": "gh-release --assets dist/ummoji.dmg,dist/ummoji-win.zip,dist/ummoji-linux.zip"
   },
