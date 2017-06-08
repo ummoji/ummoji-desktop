@@ -7,9 +7,9 @@
   "license": "MIT",
   "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)",
   "repository": "https://github.com/ummoji/ummoji-desktop",
-  "main": "app/main.js",
+  "main": "main.js",
   "scripts": {
-    "start": "electron app/main.js",
+    "start": "electron .",
     "build": "script/build.sh",
     "release": "gh-release --assets dist/ummoji.dmg,dist/ummoji-win.zip,dist/ummoji-linux.zip"
   },
