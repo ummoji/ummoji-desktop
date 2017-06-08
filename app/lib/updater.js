@@ -33,7 +33,9 @@ exports.initialize = function () {
     exports.updateMenu()
   })
 
-  autoUpdater.setFeedURL(`${updateServer}/updates?version=${app.getVersion()}`)
+  const feedURL = `${updateServer}/updates?version=${app.getVersion()}`
+  // console.log(`about to setFeedURL: ${feedURL}`)
+  autoUpdater.setFeedURL(feedURL)
   autoUpdater.checkForUpdates()
 }
 
@@ -77,6 +79,7 @@ exports.refreshUpdaterSubmenu = function (items, position) {
     visible: false,
     key: 'checkForUpdate',
     click: function () {
+      // console.log('checkForUpdate')
       autoUpdater.checkForUpdates()
     }
   }, {
