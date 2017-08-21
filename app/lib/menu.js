@@ -1,5 +1,4 @@
 const {app, Menu, shell} = require('electron')
-const updater = require('./updater')
 
 const template = [
   {
@@ -84,14 +83,6 @@ if (process.platform === 'darwin') {
     {type: 'separator'},
     {role: 'front'}
   ]
-
-  // Add a "Check for Updates" thing to the Ummoji menu
-  updater.refreshUpdaterSubmenu(template[0].submenu, 1)
-}
-
-if (process.platform === 'win32') {
-  const helpMenu = template[template.length - 1].submenu
-  updater.refreshUpdaterSubmenu(helpMenu, 0)
 }
 
 module.exports = function setMenu () {
