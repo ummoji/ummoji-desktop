@@ -1,5 +1,5 @@
 const {autoUpdater, dialog} = require('electron')
-const server = 'https://ummoji-updates-mfidgbdrmc.now.sh'
+const server = 'https://ummoji-updates.now.sh'
 const feed = `${server}/update/${process.platform}/${app.getVersion()}`
 const updateInterval = 60 * 1000
 
