@@ -1,6 +1,9 @@
-const {autoUpdater, dialog} = require('electron')
-const server = 'https://ummoji-updates.now.sh'
-const feed = `${server}/update/${process.platform}/${app.getVersion()}`
+const {app, autoUpdater, dialog} = require('electron')
+const server = 'https://electron-update-server.herokuapp.com'
+const owner = 'ummoji'
+const repo = 'ummoji-desktop'
+const feed = `${server}/${owner}/${repo}/${process.platform}/${app.getVersion()}`
+console.log(feed)
 const updateInterval = 60 * 1000
 
 module.exports = function initUpdater () {
