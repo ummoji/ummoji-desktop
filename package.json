@@ -20,6 +20,7 @@
     "ummoji-client": "^1.0.0"
   },
   "devDependencies": {
+    "codesign": "^0.0.9",
     "create-dmg": "^1.2.0",
     "electron": "^2.0.0-beta.7",
     "electron-packager": "^8.6.0",
