@@ -26,6 +26,7 @@
     "electron-installer-zip": "^0.1.2",
     "electron-packager": "^8.6.0",
     "gh-release": "^2.2.1",
+    "is-url": "^1.2.4",
     "node-icns": "0.0.4",
     "png-to-ico": "^1.0.1"
   }
