@@ -10,6 +10,7 @@ png-to-ico build/icon.png > build/icon.ico
 # mac
 electron-packager . --platform=darwin --arch=x64 --out=dist --icon=build/icon.icns --osxSign.identity='Developer ID Application: GitHub'
 codesign --deep --force --verbose --sign - dist/Ummoji-darwin-x64/Ummoji.app
+electron-installer-zip dist/Ummoji-darwin-x64 dist/ummoji-mac.zip
 create-dmg dist/Ummoji-darwin-x64/Ummoji.app
 mv Ummoji-$npm_package_version.dmg dist/ummoji.dmg
 
