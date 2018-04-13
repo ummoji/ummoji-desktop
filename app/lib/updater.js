@@ -3,7 +3,7 @@ const server = 'https://electron-update-server.herokuapp.com'
 const owner = 'ummoji'
 const repo = 'ummoji-desktop'
 const feed = `${server}/${owner}/${repo}/${process.platform}/${app.getVersion()}`
-console.log(feed)
+console.log('autoupdater feed url', feed)
 const updateInterval = 60 * 1000
 
 module.exports = function initUpdater () {

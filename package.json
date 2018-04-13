@@ -1,7 +1,7 @@
 {
   "name": "ummoji",
   "productName": "Ummoji",
-  "version": "1.2.2",
+  "version": "1.2.4",
   "description": "A desktop app for finding the perfect emoji",
   "private": true,
   "license": "MIT",
@@ -20,8 +20,9 @@
     "ummoji-client": "^1.0.0"
   },
   "devDependencies": {
+    "codesign": "^0.0.9",
     "create-dmg": "^1.2.0",
-    "electron": "^1.6.0",
+    "electron": "^2.0.0-beta.7",
     "electron-packager": "^8.6.0",
     "gh-release": "^2.2.1",
     "node-icns": "0.0.4",

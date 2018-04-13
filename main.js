@@ -9,3 +9,5 @@ function initialize () {
     updater()
   })
 }
+
+initialize()
