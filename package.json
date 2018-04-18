@@ -18,7 +18,7 @@
     "electron-analytics": "^0.1.2",
     "electron-config": "^0.2.1",
     "ummoji-client": "^1.0.0",
-    "update-electron-app": "github:electron/update-electron-app"
+    "update-electron-app": "^1.0.0"
   },
   "devDependencies": {
     "codesign": "^0.0.9",
