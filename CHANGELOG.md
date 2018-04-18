@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.2.9] - 2018-04-17
+
+- github-hosted dependencies don't seem to work in packaged apps, so using published `update-electron-app` to npm.
+
 ## [1.2.8] - 2018-04-17
 
 - superficial bump to test updating
