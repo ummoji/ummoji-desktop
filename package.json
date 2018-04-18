@@ -17,7 +17,8 @@
     "choo": "^3.3.0",
     "electron-analytics": "^0.1.2",
     "electron-config": "^0.2.1",
-    "ummoji-client": "^1.0.0"
+    "ummoji-client": "^1.0.0",
+    "update-electron-app": "github:electron/update-electron-app"
   },
   "devDependencies": {
     "codesign": "^0.0.9",
