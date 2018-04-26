@@ -1,7 +1,9 @@
 require('electron-analytics').init('S1guTYsxsl')
 const {app} = require('electron')
 
-require('update-electron-app')({repo: 'ummoji/ummoji-desktop'})
+require('update-electron-app')({
+  logger: require('electron-log')
+})
 
 function initialize () {
   app.on('ready', () => {
