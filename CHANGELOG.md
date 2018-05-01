@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.2.15] - 2018-05-01
+
+- critical bugfix in `update-electron-app`
+
 ## [1.2.14] - 2018-04-26
 
 - another superficial bump to test updating
